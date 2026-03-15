@@ -1,0 +1,21 @@
+Found 3 occurrence(s) of 1798 in patent.pdf
+  - 1 likely match(es)
+  - 2 likely noise
+
+============================================================
+LIKELY MATCHES
+============================================================
+
+1. [Page 9] Range: 1475.0 to 1826.0 (matched: "1475-1826")
+   Context: ... any of SEQ ID NOS: 1475-1826 or a subset thereof...
+
+============================================================
+LIKELY NOISE (document numbers, page numbers, etc.)
+============================================================
+
+1. [Page 2] Range: 87.0 to 3800016.0 (matched: "3800016-00087")
+   Context: ... (Attorney Dkt. No. 3800016-00087/703PC), entitled “A...
+
+2. [Page 2] Range: 4.0 to 3800016.0 (matched: "3800016-00004")
+   Context: ... (Attorney Dkt. No. 3800016-00004/p702), entitled “Me...
+
