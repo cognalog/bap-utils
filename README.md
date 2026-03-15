@@ -1,5 +1,7 @@
 # BAP Utilities
 
+Helpful scripts for document processing.
+
 ## Download
 
 1. Go to [github.com/cognalog/bap-utils](https://github.com/cognalog/bap-utils)
