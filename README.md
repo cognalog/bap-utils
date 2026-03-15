@@ -10,30 +10,44 @@ Searches a PDF document for a specific sequence ID number, finding both exact ma
 
 ---
 
-## Quick Start (Easiest Method)
+## Download
 
-### Mac
+1. Go to [github.com/cognalog/bap-utils](https://github.com/cognalog/bap-utils)
+2. Click the green **Code** button
+3. Click **Download ZIP**
+4. Extract the ZIP file to a folder on your computer (e.g., Desktop or Documents)
 
-1. **Install Python** (one-time setup):
-   - Download from [python.org/downloads](https://www.python.org/downloads/)
-   - Run the installer and follow the prompts
+---
 
-2. **Run the tool**:
-   - Double-click `run_find_number.command`
-   - If prompted about security, go to System Preferences > Security & Privacy and click "Open Anyway"
-   - On first run, the tool will automatically set up its environment (this takes a moment)
-   - Follow the prompts to enter your PDF path and search number
+## Setup
+
+### Install Python (one-time)
+
+Download Python from [python.org/downloads](https://www.python.org/downloads/) and run the installer.
+
+| Platform | Notes |
+|----------|-------|
+| **Windows** | Check the box **"Add Python to PATH"** during installation |
+| **Mac** | Run the installer and follow the prompts |
+
+---
+
+## Running the Tool
 
 ### Windows
 
-1. **Install Python** (one-time setup):
-   - Download from [python.org/downloads](https://www.python.org/downloads/)
-   - **Important**: Check the box "Add Python to PATH" during installation
+1. Open the extracted `bap-utils` folder
+2. Double-click **`run_find_number.bat`**
+3. On first run, the tool will set up its environment (this takes a moment)
+4. Follow the prompts to enter your PDF path and search number
 
-2. **Run the tool**:
-   - Double-click `run_find_number.bat`
-   - On first run, the tool will automatically set up its environment (this takes a moment)
-   - Follow the prompts to enter your PDF path and search number
+### Mac
+
+1. Open the extracted `bap-utils` folder
+2. Double-click **`run_find_number.command`**
+3. If prompted about security, go to System Settings > Privacy & Security and click "Open Anyway"
+4. On first run, the tool will set up its environment (this takes a moment)
+5. Follow the prompts to enter your PDF path and search number
 
 **Tip**: You can drag and drop a PDF file into the terminal window instead of typing the path.
 
@@ -52,29 +66,18 @@ This keeps everything self-contained and won't interfere with other Python insta
 
 ## Command Line Usage (Advanced)
 
-You can also run the launchers with arguments to skip the interactive prompts:
+You can run the launchers with arguments to skip the interactive prompts:
 
-```bash
-# Mac
-./run_find_number.command "path/to/document.pdf" 1798
-./run_find_number.command "path/to/document.pdf" 1798 --ocr
-
-# Windows
-run_find_number.bat "path\to\document.pdf" 1798
-run_find_number.bat "path\to\document.pdf" 1798 --ocr
+**Windows:**
+```
+run_find_number.bat "C:\path\to\document.pdf" 1798
+run_find_number.bat "C:\path\to\document.pdf" 1798 --ocr
 ```
 
-### Direct Python Usage
-
-If you prefer to run the Python script directly:
-
+**Mac:**
 ```bash
-# Activate the virtual environment first
-source .venv/bin/activate   # Mac/Linux
-.venv\Scripts\activate      # Windows
-
-# Then run the script
-python findNumberInPdf/find_number_in_pdf.py "path/to/document.pdf" 1798
+./run_find_number.command "/path/to/document.pdf" 1798
+./run_find_number.command "/path/to/document.pdf" 1798 --ocr
 ```
 
 ### Command Options
@@ -90,21 +93,18 @@ python findNumberInPdf/find_number_in_pdf.py "path/to/document.pdf" 1798
 
 ## OCR Setup (For Scanned PDFs)
 
-If your PDFs are scanned images rather than text-based, you'll need OCR support.
+If your PDFs are scanned images rather than searchable text, you'll need to install Tesseract OCR.
 
-### Mac
+**Windows:**
+1. Download the installer from [UB-Mannheim/tesseract](https://github.com/UB-Mannheim/tesseract/wiki)
+2. Run the installer
+3. Check the box to add Tesseract to your PATH
 
+**Mac:**
 ```bash
 brew install tesseract
 ```
-
 If you don't have Homebrew, install it first from [brew.sh](https://brew.sh/).
-
-### Windows
-
-1. Download the installer from [UB-Mannheim/tesseract](https://github.com/UB-Mannheim/tesseract/wiki)
-2. Run the installer
-3. Add Tesseract to your PATH (the installer can do this automatically)
 
 ---
 
@@ -131,23 +131,19 @@ LIKELY MATCHES
 ## Troubleshooting
 
 ### "Python is not installed" error
+Download Python from [python.org/downloads](https://www.python.org/downloads/). On Windows, make sure to check "Add Python to PATH" during installation.
 
-- Download Python from [python.org/downloads](https://www.python.org/downloads/)
-- On Windows, make sure to check "Add Python to PATH" during installation
+### Windows: "Windows protected your PC" (SmartScreen)
+Click "More info" then "Run anyway".
 
 ### Mac: "Cannot be opened because it is from an unidentified developer"
-
-- Go to System Preferences > Security & Privacy > General
-- Click "Open Anyway" next to the message about the blocked file
+Go to System Settings > Privacy & Security, scroll down, and click "Open Anyway" next to the blocked file message.
 
 ### First run is slow
-
 This is normal. The tool is setting up its environment and downloading dependencies. Subsequent runs will be fast.
 
 ### Need to reset the environment
-
-If something goes wrong with the setup, delete the `.venv` folder and run the tool again. It will recreate the environment from scratch.
+Delete the `.venv` folder inside `bap-utils` and run the tool again. It will recreate the environment from scratch.
 
 ### OCR not working
-
 Make sure Tesseract is installed (see OCR Setup section above).
