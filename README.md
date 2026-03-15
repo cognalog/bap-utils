@@ -1,7 +1,5 @@
 # BAP Utilities
 
-Utility scripts for patent specialists.
-
 ## Download
 
 1. Go to [github.com/cognalog/bap-utils](https://github.com/cognalog/bap-utils)
