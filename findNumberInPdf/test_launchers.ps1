@@ -52,7 +52,7 @@ Write-Host ""
 
 # Test 1: Basic search with exact match
 Write-Host "Test 1: Search for exact match (1798)..."
-$output = & cmd /c "run_find_number.bat test_data\test_document.pdf 1798 2>&1"
+$output = & cmd /c "run.bat test_data\test_document.pdf 1798 2>&1"
 if ($output -match "Exact match: 1798") {
     Pass "Found exact match for 1798"
 } else {
@@ -62,7 +62,7 @@ if ($output -match "Exact match: 1798") {
 
 # Test 2: Search for number in range
 Write-Host "Test 2: Search for number within range (1500)..."
-$output = & cmd /c "run_find_number.bat test_data\test_document.pdf 1500 2>&1"
+$output = & cmd /c "run.bat test_data\test_document.pdf 1500 2>&1"
 if ($output -match "Range:") {
     Pass "Found range containing 1500"
 } else {
@@ -72,7 +72,7 @@ if ($output -match "Range:") {
 
 # Test 3: Search for number not in document
 Write-Host "Test 3: Search for number not in document (9999)..."
-$output = & cmd /c "run_find_number.bat test_data\test_document.pdf 9999 2>&1"
+$output = & cmd /c "run.bat test_data\test_document.pdf 9999 2>&1"
 if ($output -match "No occurrences") {
     Pass "Correctly reported no matches for 9999"
 } else {
@@ -82,7 +82,7 @@ if ($output -match "No occurrences") {
 
 # Test 4: File not found error
 Write-Host "Test 4: Handle missing file..."
-$output = & cmd /c "run_find_number.bat nonexistent.pdf 123 2>&1"
+$output = & cmd /c "run.bat nonexistent.pdf 123 2>&1"
 if ($output -match "not found|error") {
     Pass "Correctly handled missing file"
 } else {

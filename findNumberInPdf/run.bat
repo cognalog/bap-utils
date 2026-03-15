@@ -3,8 +3,8 @@ REM Windows launcher for find_number_in_pdf
 REM Double-click this file to run interactively, or run from command line with arguments
 REM
 REM Usage:
-REM   Interactive:  run_find_number.bat
-REM   With args:    run_find_number.bat <pdf_path> <number> [--ocr]
+REM   Interactive:  run.bat
+REM   With args:    run.bat <pdf_path> <number> [--ocr]
 
 cd /d "%~dp0"
 
@@ -73,7 +73,7 @@ echo.
 echo Searching...
 echo.
 
-python findNumberInPdf\find_number_in_pdf.py "%pdf_path%" %search_number% %ocr_flag% -v
+python find_number_in_pdf.py "%pdf_path%" %search_number% %ocr_flag% -v
 set exit_code=%errorlevel%
 
 echo.

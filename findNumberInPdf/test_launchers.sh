@@ -56,7 +56,7 @@ echo ""
 
 # Test 1: Basic search with exact match
 echo "Test 1: Search for exact match (1798)..."
-output=$(./run_find_number.command test_data/test_document.pdf 1798 2>&1)
+output=$(./run.command test_data/test_document.pdf 1798 2>&1)
 if echo "$output" | grep -q "Exact match: 1798"; then
     pass "Found exact match for 1798"
 else
@@ -66,7 +66,7 @@ fi
 
 # Test 2: Search for number in range
 echo "Test 2: Search for number within range (1500)..."
-output=$(./run_find_number.command test_data/test_document.pdf 1500 2>&1)
+output=$(./run.command test_data/test_document.pdf 1500 2>&1)
 if echo "$output" | grep -q "Range:"; then
     pass "Found range containing 1500"
 else
@@ -76,7 +76,7 @@ fi
 
 # Test 3: Search for number not in document
 echo "Test 3: Search for number not in document (9999)..."
-output=$(./run_find_number.command test_data/test_document.pdf 9999 2>&1)
+output=$(./run.command test_data/test_document.pdf 9999 2>&1)
 if echo "$output" | grep -q "No occurrences"; then
     pass "Correctly reported no matches for 9999"
 else
@@ -86,7 +86,7 @@ fi
 
 # Test 4: File not found error
 echo "Test 4: Handle missing file..."
-output=$(./run_find_number.command nonexistent.pdf 123 2>&1) || true
+output=$(./run.command nonexistent.pdf 123 2>&1) || true
 if echo "$output" | grep -qi "not found\|error"; then
     pass "Correctly handled missing file"
 else
@@ -96,7 +96,7 @@ fi
 
 # Test 5: Check exit code on success
 echo "Test 5: Check exit code on success..."
-./run_find_number.command test_data/test_document.pdf 1798 > /dev/null 2>&1
+./run.command test_data/test_document.pdf 1798 > /dev/null 2>&1
 if [ $? -eq 0 ]; then
     pass "Exit code 0 on success"
 else

@@ -3,8 +3,8 @@
 # Double-click this file to run interactively, or run from command line with arguments
 #
 # Usage:
-#   Interactive:  ./run_find_number.command
-#   With args:    ./run_find_number.command <pdf_path> <number> [--ocr]
+#   Interactive:  ./run.command
+#   With args:    ./run.command <pdf_path> <number> [--ocr]
 
 cd "$(dirname "$0")"
 
@@ -80,7 +80,7 @@ echo ""
 echo "Searching..."
 echo ""
 
-python findNumberInPdf/find_number_in_pdf.py "$pdf_path" "$search_number" $ocr_flag -v
+python find_number_in_pdf.py "$pdf_path" "$search_number" $ocr_flag -v
 exit_code=$?
 
 echo ""
