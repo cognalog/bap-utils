@@ -6,7 +6,7 @@ Utility scripts for patent specialists.
 
 ### Find Sequence ID Number in PDF
 
-Searches a PDF document for a specific number, finding both exact matches and numeric ranges (e.g., "SEQ ID NOS: 1-100"). Useful for locating sequence identifiers in patent applications.
+Searches a PDF document for a specific sequence ID number, finding both exact matches (e.g., "SEQ ID NO: 1798") and numeric ranges that contain the number (e.g., "SEQ ID NOS: 1475-1826"). Only matches that appear in a sequence ID context are returned—random numbers elsewhere in the document are filtered out.
 
 ---
 
